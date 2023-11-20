@@ -11,11 +11,21 @@ sudo apt-get update
 # install packages
 sudo apt-get install rsync avahi-daemon
 
-# check the hostname and make sure it is distinct. Write it down.
+# check the hostname and make sure it is distinct. Write it down in
+# client_list.txt in the first column.
 hostnamectl status
-#If the hostname isn't distinct, set a new hostname and write it down along with
-#a description so you can easily identify it.
+
+# If the hostname isn't distinct, set a new hostname and write it down in
+# client_list.txt in the first column.
 sudo hostnamectl set-hostname NEWMACHINENAME
+
+# Do this manually. Write down the username of the machine in the second column
+# of client_list.txt. The columns should be separated only by a comma.
+
+# Do this manually. Write down the absolute directory path that is to be backed
+# up in the third column of client_list.txt. The columns should be separated
+# only by a comma. This directory should end with a '/', only the contents will
+# be backed up.
 
 # check if avahi is installed and running for mDNS. It should be. If not notify
 # your admin.

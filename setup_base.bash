@@ -5,17 +5,20 @@
 # list on each machine, we can run ssh-copy-id to copy the ssh key to each
 # machine and then ssh to each machine by hostname.local instead of IP address.
 
+# Step 1
 # update package list
 sudo apt-get update
 
+# Step 2
 # install packages
 sudo apt-get install rsync avahi-daemon
 
+# Step 3
 # check the hostname and make sure it is distinct. Write it down in
 # client_list.txt in the first column.
 hostnamectl status
 
-# If the hostname isn't distinct, set a new hostname and write it down in
+# IF the hostname isn't distinct, set a new hostname and write it down in
 # client_list.txt in the first column.
 sudo hostnamectl set-hostname NEWMACHINENAME
 
@@ -27,10 +30,12 @@ sudo hostnamectl set-hostname NEWMACHINENAME
 # only by a comma. This directory should end with a '/', only the contents will
 # be backed up.
 
+# Step 4
 # check if avahi is installed and running for mDNS. It should be. If not notify
 # your admin.
 systemctl status avahi-daemon
 
+# Step 5
 # check if ufw is installed and running. If not, leave it off and reboot.
 sudo ufw status
 

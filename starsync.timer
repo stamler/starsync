@@ -1,5 +1,10 @@
 # starsync.timer
 # Place this file at /etc/systemd/system/starsync.timer
+# Once both the timer and unit are in place, you can reload the systemd daemon
+# and start the timer with the following commands:
+# sudo systemctl daemon-reload
+# sudo systemctl start starsync.timer
+
 [Unit]
 Description=Run Starsync every day at midnight
 

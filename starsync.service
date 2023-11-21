@@ -1,0 +1,7 @@
+# starsync.service
+# Should be saved in /etc/systemd/system/starsync.service
+[Unit]
+Description=Starsync from multiple sources to this server
+
+[Service]
+ExecStart=/path/to/your/starsync.sh

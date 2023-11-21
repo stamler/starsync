@@ -1,0 +1,13 @@
+# starsync.timer
+# Place this file at /etc/systemd/system/starsync.timer
+[Unit]
+Description=Run Starsync every day at midnight
+
+[Timer]
+# Schedule your script every day 10 pm
+OnCalendar=*-*-* 22:00:00
+
+Persistent=true
+
+[Install]
+WantedBy=timers.target

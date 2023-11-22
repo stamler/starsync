@@ -4,4 +4,6 @@
 Description=Starsync from multiple sources to this server
 
 [Service]
-ExecStart=/path/to/your/starsync.sh
+WorkingDirectory=/home/swamylab/mouselab/scripts/
+ExecStart=/home/swamylab/mouselab/scripts/starsync.bash
+User=swamylab

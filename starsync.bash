@@ -10,12 +10,14 @@
 # so no files will be transferred. To perform actual rsync operations, remove
 # the '-n' flag from the rsync command.
 
+destination="/home/swamylab/mouselab/data"
 
 while read -r line; do
     hostname=$(echo $line | cut -d ',' -f 1)
     username=$(echo $line | cut -d ',' -f 2)
     directory=$(echo $line | cut -d ',' -f 3)
     log_file="rsync-$hostname-$(date +%Y-%m-%d).log"
-    rsync -av --ignore-existing --dry-run --log-file=$log_file $username@$hostname:$directory /home/LOCALUSER/repository/$hostname
+    command="rsync -av --ignore-existing --log-file=$log_file $username@$hostname:$directory $destination/$hostname"
+    echo "running: $command"
+    $command
 done < client_list.txt
-

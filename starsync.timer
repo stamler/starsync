@@ -6,11 +6,11 @@
 # sudo systemctl start starsync.timer
 
 [Unit]
-Description=Run Starsync every day at midnight
+Description=Run Starsync every day at 2 am
 
 [Timer]
-# Schedule your script every day 10 pm
-OnCalendar=*-*-* 22:00:00
+# Schedule your script every day 2 am
+OnCalendar=*-*-* 02:00:00
 
 Persistent=true
 

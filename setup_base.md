@@ -13,7 +13,7 @@ update package list and install packages
 
 ```bash
   sudo apt-get update
-  sudo apt-get install rsync avahi-daemon
+  sudo apt-get install rsync avahi-daemon openssh-server
 ```
 
 ## Step 2
@@ -46,22 +46,21 @@ be backed up.
 
 ## Step 3
 
-check if avahi is installed and running for mDNS. It should be. If not notify
-your admin.
+reboot each computer to ensure all hostnames and installations are completed
 
 ```bash
-  systemctl status avahi-daemon
+  reboot
 ```
 
 ## Step 4
 
-check if ufw is installed and running. If not, leave it off and reboot.
+check if ufw is installed and running. If not, you are done.
 
 ```bash
   sudo ufw status
 ```
 
-If firewall is enabled, allow ssh and mDNS then reload ufw, then reboot.
+Otherwise if firewall is enabled, allow ssh and mDNS then reload ufw.
 
 ```bash
   sudo ufw allow ssh
